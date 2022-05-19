@@ -1,8 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar/NavBar'; 
-
-
+import Slide from './Components/Carousel/Slide'; 
+import ListaProductos from './Components/ListaProductos/CardStock';
 
 function App() {
   return (
@@ -10,13 +10,14 @@ function App() {
     <div className="NavBar">
       
         <NavBar/>
-      
+           
     </div>
     <div> 
-      <h2 className='App'>
-        Próximamente tienda de accesorios de motos ADV 
-      </h2>
-
+        <Slide/> 
+    
+        <div className='contenedor'> 
+          <ListaProductos/>
+        </div>   
     </div>
     </>
   );
