@@ -54,3 +54,16 @@ body{
 .color{
   color: #C4E538;
 }
+
+.contenedorContador{
+  padding: auto;
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.botonContador{
+  padding: auto;
+  margin: auto;
+  background-color: beige;
+}

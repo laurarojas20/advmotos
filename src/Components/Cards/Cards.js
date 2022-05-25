@@ -1,7 +1,10 @@
 import { Card, Button } from "react-bootstrap";
+import  ItemCount  from "../ItemCount/ItemCount.js"
 
 const CardBoots = ({nombre, imagen, descripcion, precio}) => {
-    return(
+    
+return(
+    
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src=  {` ./${imagen} ` } />
             <Card.Body>
@@ -12,10 +15,11 @@ const CardBoots = ({nombre, imagen, descripcion, precio}) => {
                 <Card.Text>
                     ${precio} 
                 </Card.Text>
+                <ItemCount /> 
                 <Button variant="primary">Agregar</Button>
             </Card.Body>
         </Card>
-
+        
     )
 }
 

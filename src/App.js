@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar/NavBar'; 
 import Slide from './Components/Carousel/Slide'; 
-import ListaProductos from './Components/ListaProductos/CardStock';
+import ListaProductos from './Components/ListaProductos/itemListContainer';
 
 function App() {
   return (
