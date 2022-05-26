@@ -16,7 +16,9 @@ const ItemListContainer = () => {
     useEffect( () => {
         traerProductos()
         .then ((respuesta) => {
-            setProductos(respuesta)
+            setTimeout(() => {
+                setProductos(respuesta)
+            }, 2000)
         })
         .catch( (error) => {
             alert('Falló la llamada', error)
