@@ -3,10 +3,11 @@ import  ItemCount  from "../ItemCount/ItemCount.js"
 import React from 'react';
 import { toast } from 'react-toastify';
 
+
 const CardBoots = ({nombre, imagen, descripcion, precio, cantidad}) => {
     
     const agregarCarrito = (contador) =>{        
-        toast(`Agregaste ${contador} de ${nombre}`, {
+        toast(`Agregaste ${contador} ${nombre}`, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -18,7 +19,8 @@ const CardBoots = ({nombre, imagen, descripcion, precio, cantidad}) => {
 }
 
 return(   
-        <Card style={{ width: '18rem' }}>
+     
+        <Card>
             <Card.Img variant="top" src=  {` ./${imagen} ` } />
             <Card.Body>
                 <Card.Title>{nombre}</Card.Title>
@@ -28,10 +30,10 @@ return(
                 <Card.Text>
                     ${precio} 
                 </Card.Text>
-                <ItemCount agregarCarrito={ agregarCarrito } cantidad={cantidad} /> 
+                <ItemCount agregarCarrito={ agregarCarrito } cantidad={10} /> 
             </Card.Body>
         </Card>
-        
+       
     )
 }
 
