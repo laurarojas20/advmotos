@@ -1,10 +1,23 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import  ItemCount  from "../ItemCount/ItemCount.js"
+import React from 'react';
+import { toast } from 'react-toastify';
 
-const CardBoots = ({nombre, imagen, descripcion, precio}) => {
+const CardBoots = ({nombre, imagen, descripcion, precio, cantidad}) => {
     
-return(
-    
+    const agregarCarrito = (contador) =>{        
+        toast(`Agregaste ${contador} de ${nombre}`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            })
+}
+
+return(   
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src=  {` ./${imagen} ` } />
             <Card.Body>
@@ -15,8 +28,7 @@ return(
                 <Card.Text>
                     ${precio} 
                 </Card.Text>
-                <ItemCount /> 
-                <Button variant="primary">Agregar</Button>
+                <ItemCount agregarCarrito={ agregarCarrito } cantidad={cantidad} /> 
             </Card.Body>
         </Card>
         

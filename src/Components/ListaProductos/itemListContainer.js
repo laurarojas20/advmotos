@@ -1,12 +1,13 @@
 import CardBoots from "../Cards/Cards";
 import { Card, CardGroup } from "react-bootstrap";
-import StockProductos from "./List";
+import List from "./List";
 import { useEffect, useState } from "react";
 
-const ListaProductos = () => { 
+
+const ItemListContainer = () => { 
     const traerProductos = () => {
         return new Promise ( (resolve, reject) => {
-            resolve(StockProductos)
+            resolve(List)
         })
     }
 
@@ -21,6 +22,8 @@ const ListaProductos = () => {
             alert('Falló la llamada', error)
         }, [])
     })
+
+
 
     return (
         <>
@@ -42,6 +45,6 @@ const ListaProductos = () => {
     )
 }
 
-export default ListaProductos;
+export default ItemListContainer;
 
 

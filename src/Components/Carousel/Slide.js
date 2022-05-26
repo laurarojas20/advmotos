@@ -1,7 +1,7 @@
 import { Carousel } from "react-bootstrap"
 
 
-const CarouselBoots = () => {
+const Slide = () => {
     return (
         <Carousel fade>
             <Carousel.Item>
@@ -32,4 +32,4 @@ const CarouselBoots = () => {
     )
 }
 
-export default CarouselBoots;
+export default Slide;

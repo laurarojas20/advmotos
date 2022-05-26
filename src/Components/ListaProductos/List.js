@@ -1,4 +1,4 @@
-const StockProductos = [
+const List = [
     {
         id: "Pb1",
         nombre: "Parabrisa MTC Grand Route",
@@ -33,4 +33,4 @@ const StockProductos = [
 
 ]
 
-export default StockProductos 
+export default List

@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar/NavBar'; 
 import Slide from './Components/Carousel/Slide'; 
-import ListaProductos from './Components/ListaProductos/itemListContainer';
+import ItemListContainer from './Components/ListaProductos/ItemListContainer';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Slide/> 
     
         <div className='contenedor'> 
-          <ListaProductos/>
+          <ItemListContainer/>
         </div>   
     </div>
     </>
