@@ -20,7 +20,7 @@ const CardBoots = ({nombre, imagen, descripcion, precio, cantidad}) => {
 
 return(   
      
-        <Card>
+        <Card style={{ width: '16rem' }}>
             <Card.Img variant="top" src=  {` ./${imagen} ` } />
             <Card.Body>
                 <Card.Title>{nombre}</Card.Title>

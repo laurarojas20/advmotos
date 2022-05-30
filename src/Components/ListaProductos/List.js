@@ -33,4 +33,14 @@ const List = [
 
 ]
 
+const ProductoDetalle = {
+    id: "Pb3",
+    nombre: "Parabrisa Pferd Adventure 390 Y 790",
+    descripcion: "Incluye: Parabrisas de 41 cm en policarbonato ESPECIAL, sistema movil SAVAGE y refuerzos para el soporte", 
+    precio: 16.391,
+    img: "./img/parabrisas3.jpg",
+    cantidad: 8
+}
+
 export default List
+export { ProductoDetalle }

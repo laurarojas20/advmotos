@@ -30,12 +30,12 @@ const ItemListContainer = () => {
         <>
         <div>
             <h3> Parabrisas </h3>
-                <CardGroup  row row-cols-1 row-cols-md-2 row-cols-lg-4>
+                <CardGroup className='row row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>
             {
                 productos.map( ({nombre, img, descripcion, precio, id}) => {
                     return(
                     
-                        <Card key= {id}>
+                        <Card className="col" key= {id}>
                         <CardBoots nombre= {nombre} imagen={img} descripcion={descripcion} precio={precio} /> 
                         </Card>
                        

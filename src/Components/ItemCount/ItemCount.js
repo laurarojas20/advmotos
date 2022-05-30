@@ -17,6 +17,8 @@ const ItemCount = ({cantidad, agregarCarrito}) => {
             setContador ( contador - 1 )
         }
     }
+
+    
    
     return (
        
