@@ -2,24 +2,25 @@ import { Navbar } from "react-bootstrap"
 import { Nav } from "react-bootstrap"
 import { NavDropdown } from "react-bootstrap"
 import { Container } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
     
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home"> ADVMotos </Navbar.Brand>
+  <Navbar.Brand> <Link to= {`/`}> ADVMotos </Link></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#features"> Indumentaria </Nav.Link>
-      <Nav.Link href="#pricing"> Performance </Nav.Link>
+      <Nav.Link><Link to={`../indumentaria`}> Indumentaria </Link></Nav.Link>
+      <Nav.Link><Link to={`../performance`}> Performance </Link></Nav.Link>
       <NavDropdown title="Accesorios" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1"> Parabrisas </NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2"> Cubre puños </NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3"> Portaequipajes </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`../accesorios/parabrisas`}> Parabrisas </Link> </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`../accesorios/cubre-puños`}> Cubre puños </Link> </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`../accesorios/portaequipaje-baul`}> Portaequipajes y baules</Link> </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4"> Defensas </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`../accesorios/defensas`}> Defensas </Link> </NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Nav>

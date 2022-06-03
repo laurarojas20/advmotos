@@ -1,27 +1,31 @@
 import ItemDetail from "../ItemDetail/ItemDetail"
-import { ProductoDetalle }  from "../ListaProductos/List"
+import List  from "../ListaProductos/List"
 import { useEffect, useState } from "react"
+import { useParams, useNavigate } from "react-router-dom"
 
 const ItemDetailContainer = () => {
-
-    const traerProductoDetalle = () => {
-        return new Promise ( (resolve, reject) => {
-            resolve(ProductoDetalle)
-        }, 2000 )
-    }
-
-    const [producto , setProducto] = useState ({})
+    const {id} = useParams()
+    const [producto , setProducto] = useState ({}) 
+    const navigate = useNavigate()
+   
+    // const traerProductoDetalle = () => {
+    //     return new Promise ( (resolve, reject) => {
+    //         resolve(List)
+    //     }, 2000 )
+    // }
 
     useEffect ( () => {
-        traerProductoDetalle()
-        .then ( (respuesta) => {
-            setProducto(respuesta)
+        const filtroProductos = List.find ( (item) => {
+            return item.id === id
         })
-        .catch ( (error) => {
-            alert("Lo sentimos, hubo un error", error)
+
+        if ( filtroProductos === undefined ){
+            navigate('/NoEncontrado')
+        } else {
+            setProducto(filtroProductos)
         }
-        )
-    }, []    )
+
+    }, [id])
 
     return (
         <div> 

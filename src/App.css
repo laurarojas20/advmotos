@@ -97,6 +97,11 @@ body{
   clear: both;
 }
 
+a:link, a:visited, a:active{
+  text-decoration: none;
+  color: #b2bec3;
+}
+
 
  @media (min-width: 481px) and (max-width: 768px) {
   .Imagenes{

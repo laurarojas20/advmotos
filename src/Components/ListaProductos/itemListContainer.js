@@ -1,42 +1,38 @@
 import CardBoots from "../Cards/Cards";
 import { Card, CardGroup } from "react-bootstrap";
-import List from "./List";
-import { useEffect, useState } from "react";
 
-const ItemListContainer = () => { 
-    const traerProductos = () => {
-        return new Promise ( (resolve, reject) => {
-            resolve(List)
-        })
-    }
+const ItemListContainer = ({nombre, productos}) => { 
+    // const traerProductos = () => {
+    //     return new Promise ( (resolve, reject) => {
+    //         resolve(List)
+    //     })
+    // }
 
-    const [productos, setProductos] = useState ([])
+    // const [productos, setProductos] = useState ([])
 
-    useEffect( () => {
-        traerProductos()
-        .then ((respuesta) => {
-            setTimeout(() => {
-                setProductos(respuesta)
-            }, 2000)
-        })
-        .catch( (error) => {
-            alert('Falló la llamada', error)
-        }, [])
-    })
-
-
-
+    // useEffect( () => {
+    //     traerProductos()
+    //     .then ((respuesta) => {
+    //         setTimeout(() => {
+    //             setProductos(respuesta)
+    //         }, 2000)
+    //     })
+    //     .catch( (error) => {
+    //         alert('Falló la llamada', error)
+    //     }, [])
+    // })
+    
     return (
         <>
         <div>
             <h3> Parabrisas </h3>
                 <CardGroup className='row row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>
             {
-                productos.map( ({nombre, img, descripcion, precio, id}) => {
+                productos.map( ({nombre, img,  precio, id}) => {
                     return(
                     
                         <Card className="col" key= {id}>
-                        <CardBoots nombre= {nombre} imagen={img} descripcion={descripcion} precio={precio} /> 
+                        <CardBoots nombre= {nombre} imagen={img} precio={precio} /> 
                         </Card>
                        
                     )
