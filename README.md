@@ -26,3 +26,5 @@ Utilicé la librería de react-toastify para darle dinamismo al evento de agrega
 ### `npm install react-router-dom@6`
 
 Se implementó esta librería para facilitar el enrutamiento basado en componentes.
+
+![](..%5C..%5C..%5C..%5C..%5CEscritorio%5CADVMotos.gif)

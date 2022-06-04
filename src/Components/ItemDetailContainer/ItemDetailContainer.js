@@ -4,34 +4,30 @@ import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
 const ItemDetailContainer = () => {
-    const {id} = useParams()
+    const { id } = useParams()
     const [producto , setProducto] = useState ({}) 
     const navigate = useNavigate()
    
-    // const traerProductoDetalle = () => {
-    //     return new Promise ( (resolve, reject) => {
-    //         resolve(List)
-    //     }, 2000 )
-    // }
+    const traerProductos = () => {
+        return new Promise ( (resolve, reject) => {
+            resolve(List)
+        })
+    }
+
 
     useEffect ( () => {
-        const filtroProductos = List.find ( (item) => {
-            return item.id === id
+        traerProductos()
+        .then ( (res) => { 
+            setProducto ( id 
+                ? res.find (item => item.id === parseInt(id)) 
+                : navigate('/NoEncontrado'))
         })
-
-        if ( filtroProductos === undefined ){
-            navigate('/NoEncontrado')
-        } else {
-            setProducto(filtroProductos)
-        }
 
     }, [id])
 
     return (
-        <div> 
-            
-            <ItemDetail descripcion={producto}/> 
-
+        <div>
+            <ItemDetail descripcion={producto}/>
         </div>
     )
 }

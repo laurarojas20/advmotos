@@ -13,14 +13,14 @@ const NavBar = () => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link><Link to={`../indumentaria`}> Indumentaria </Link></Nav.Link>
-      <Nav.Link><Link to={`../performance`}> Performance </Link></Nav.Link>
+      <Nav.Link><Link to={`/indumentaria`}> Indumentaria </Link></Nav.Link>
+      <Nav.Link><Link to={`/performance`}> Performance </Link></Nav.Link>
       <NavDropdown title="Accesorios" id="collasible-nav-dropdown">
-        <NavDropdown.Item> <Link to= {`../accesorios/parabrisas`}> Parabrisas </Link> </NavDropdown.Item>
-        <NavDropdown.Item> <Link to= {`../accesorios/cubre-puños`}> Cubre puños </Link> </NavDropdown.Item>
-        <NavDropdown.Item> <Link to= {`../accesorios/portaequipaje-baul`}> Portaequipajes y baules</Link> </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`/accesorios/parabrisas`}> Parabrisas </Link> </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`/accesorios/cubrepunos`}> Cubre puños </Link> </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`/accesorios/portaequipaje`}> Portaequipajes y baules</Link> </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item> <Link to= {`../accesorios/defensas`}> Defensas </Link> </NavDropdown.Item>
+        <NavDropdown.Item> <Link to= {`/accesorios/defensas`}> Defensas </Link> </NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Nav>

@@ -24,7 +24,7 @@ const ItemCount = ({cantidad, agregarCarrito}) => {
        
     <div className="contenedorContador">           
         <Button className="botonContador" variant="secondary" onClick={restaContador} > - </Button>
-            <p> {contador} </p>        
+            <p className="botonContador"> {contador} </p>        
         <Button className="botonContador" variant="secondary" onClick={sumaContador}> + </Button>
         
         <Button className="contenedorContador" variant="primary" onClick={ () => { agregarCarrito (contador) } } disabled={contador === 0}> Agregar </Button>              

@@ -1,4 +1,4 @@
-import ItemListContainer from "../Components/ItemDetailContainer/ItemDetailContainer"
+import ItemListContainer from "../Components/ListaProductos/ItemListContainer"
 import List from "../Components/ListaProductos/List"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
@@ -12,33 +12,21 @@ const ListaProductos = () => {
             resolve(List)
         })
     }
-    const filtroCategorias = (array) => {
-        return array.map( (articulo) => {
-            if (articulo.categoria === categoria) {
-                return setProductos(productos => [...productos, articulo])
-            }
-        } )
-    }
-    
-    useEffect( () => {
-        setProductos([])
+
+    useEffect( () => {    
         traerProductos()
-        .then ((respuesta) => {
-            
-                filtroCategorias(respuesta)
-           
+        .then ((respuesta) => {            
+                setProductos( categoria 
+                    ? respuesta.filter(articulo => articulo.categoria === categoria)
+                    : respuesta)   
         })
 
     }, [categoria])
-
     
-
     return (
-        <div> 
-           
-        <ItemListContainer nombre={"LISTADO DE PRODUCTOS"} productos={productos} /> 
+        <div className="contenedor">           
+            <ItemListContainer titulo={categoria} productos={productos} /> 
         </div>
-// 
     )
 }
 
