@@ -28,3 +28,4 @@ Utilicé la librería de react-toastify para darle dinamismo al evento de agrega
 Se implementó esta librería para facilitar el enrutamiento basado en componentes.
 
 ![](..%5C..%5C..%5C..%5C..%5CEscritorio%5CADVMotos.gif)
+![ADVMotos](https://user-images.githubusercontent.com/85701622/172051322-bc6febaf-03db-4efb-b201-38db33a70a3b.gif)
