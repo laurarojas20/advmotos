@@ -4,7 +4,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 
-const CardBoots = ({nombre, imagen, precio, id}) => {
+const CardBoots = ({nombre, imagen, precio, id, setMostrarBoton}) => {
     
     const agregarCarrito = (contador) =>{        
         toast(`Agregaste ${contador} ${nombre}`, {
@@ -30,7 +30,11 @@ return(
                 <Button className="botonContador" variant="dark"> <Link to={`/producto/${id}`}>
                     Ver detalle 
                 </Link></Button>
-                <ItemCount agregarCarrito={ agregarCarrito } cantidad={10} /> 
+                
+                    <ItemCount agregarCarrito={ agregarCarrito } cantidad={10}/> 
+                
+                
+
             </Card.Body>
         </Card>
        
