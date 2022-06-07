@@ -1,4 +1,4 @@
-const List = [
+const MockProductos = [
     {
         id: 1,
         nombre: "Parabrisa MTC Grand Route",
@@ -127,4 +127,4 @@ const List = [
 
 ]
 
-export default List
+export default MockProductos

@@ -5,28 +5,21 @@ const ItemCount = ({cantidad, agregarCarrito, setMostrarBoton}) => {
     const [contador, setContador] = useState (1)
 
     const sumaContador = () => {
-        if(contador < cantidad) {
-            setContador ( contador + 1 )
-        }       
+        contador < cantidad && ( setContador(contador + 1) )
     }
 
     const restaContador = () => {
-        if (contador > 0){
-            setContador ( contador - 1 )
-        }
+        contador > 0 && ( setContador(contador - 1) )
     }
 
-    return (
-       
+return (      
     <div className="contenedorContador">           
         <Button className="botonContador" variant="secondary" onClick={restaContador} > - </Button>
             <p className="botonContador"> {contador} </p>        
         <Button className="botonContador" variant="secondary" onClick={sumaContador}> + </Button>
         
-        <Button className="contenedorContador" variant="primary" onClick={ () => {agregarCarrito (contador) ; setMostrarBoton(true)} } disabled={contador === 0}> Agregar </Button>              
-        
+        <Button className="contenedorContador" variant="primary" onClick={ () => {agregarCarrito (contador) ; setMostrarBoton(true)} } disabled={contador === 0}> Agregar </Button>                      
     </div>
-        
     )
 }
 

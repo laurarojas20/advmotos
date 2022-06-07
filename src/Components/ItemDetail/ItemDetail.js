@@ -17,8 +17,6 @@ const ItemDetail = ({descripcion}) => {
             draggable: true,
             progress: undefined,
             })
-            
-
 }
 
     return (
