@@ -2,45 +2,39 @@ import ItemListContainer from "../Components/ItemListContainer/ItemListContainer
 import TraerProductos from "../Data/TraerProductos";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-// import { Spinner } from "react-bootstrap";
+import Loader from "../Components/Loader/Loader";
+
 
 const ListaProductos = () => {
     const [productos, setProductos] = useState ([])
     const { categoria } = useParams()
-    // const [loading, setLoading] = useState(false)
-    
-    // const cambioEstado = () => {
-    //     if (loading === true){
-    //     return <Spinner animation="border" variant="danger" />       
-    //     }
-    // }
+    const [loading, setLoading] = useState(true)
+
 
     useEffect( () => {  
-    //   setLoading(true) 
-    //     cambioEstado()  
         TraerProductos() 
-        .then ((respuesta) => {            
-            
-                setProductos( categoria 
-                    ? respuesta.filter(articulo => articulo.categoria === categoria)
-                    : respuesta)
-                 
+        .then ((respuesta) => {
+                    setProductos( categoria 
+                        ? respuesta.filter(articulo => articulo.categoria === categoria)
+                        : respuesta)              
         .catch((error)=>(
             alert('Lo sentimos hubo un error', error)
         )
-        ).finally(()=>{
-            // setLoading(false)
+        ).finally(()=>{ 
+            setLoading(false) 
         })
         })
-
-        
-
     }, [categoria])
     
     return (
+        <>
+        { loading ? <Loader /> 
+        :
         <div className="contenedor">           
             <ItemListContainer titulo={categoria} productos={productos} /> 
         </div>
+        }
+        </>
     )
 }
 
