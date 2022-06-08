@@ -16,13 +16,13 @@ const ListaProductos = () => {
         .then ((respuesta) => {
                     setProductos( categoria 
                         ? respuesta.filter(articulo => articulo.categoria === categoria)
-                        : respuesta)              
-        .catch((error)=>(
+                        : respuesta)
+        })              
+        .catch( (error) => {
             alert('Lo sentimos hubo un error', error)
-        )
-        ).finally(()=>{ 
+        }
+        ).finally( () => { 
             setLoading(false) 
-        })
         })
     }, [categoria])
     
