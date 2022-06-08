@@ -86,6 +86,10 @@ body{
   margin-right: 1%;
 }
 
+.anchoTotal{
+  width: 90%;
+}
+
 .Nombre{
   width: 45%;
   float: right;
