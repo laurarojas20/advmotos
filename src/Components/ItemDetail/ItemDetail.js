@@ -2,13 +2,15 @@ import { Container, Button } from "react-bootstrap"
 import ItemCount from "../ItemCount/ItemCount"
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CarritoContexto } from "../../Contexto/CarritoContexto";
 
-const ItemDetail = ({descripcion}) => {
+const ItemDetail = ({descripcion, contador}) => {
+    const { agregarAlCarrito } = useContext(CarritoContexto)
     const [mostrarBoton, setMostrarBoton ] = useState(false)
 
     const agregarCarrito = (contador) =>{        
-        toast(`Agregaste ${contador} ${descripcion.nombre}`, {
+        toast(`Agregaste ${descripcion.nombre}`, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -31,11 +33,19 @@ const ItemDetail = ({descripcion}) => {
                 <h4> ${descripcion.precio} </h4>
             
         {mostrarBoton === false ? 
+            <div>
             <ItemCount  
             agregarCarrito={ agregarCarrito } 
             cantidad={10}
             setMostrarBoton={ setMostrarBoton }
             />
+            <Button className="contenedorContador"
+                variant="primary" 
+                onClick={ () => {agregarCarrito (contador) ; agregarAlCarrito(`${descripcion.nombre}`) } } 
+                disabled={contador === 0} > 
+                Agregar 
+            </Button>
+            </div>
         :
             <Button variant="dark"><Link to={`/carrito`}> Pagar </Link></Button>            
         }

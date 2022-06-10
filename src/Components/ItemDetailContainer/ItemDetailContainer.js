@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
     const [producto , setProducto] = useState ({}) 
     const navigate = useNavigate()
-
+    
     useEffect ( () => {
         TraerProductos()
         .then ( (res) => { 

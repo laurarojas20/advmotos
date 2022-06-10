@@ -10,25 +10,28 @@ import Performance from './Pestañas/Performance';
 import Detalle from './Pestañas/Detalle';
 import ListaProductos from './Pestañas/ListaProductos';
 import NoEncontrado from './Pestañas/NoEncontrado';
+import CarritoCompras from './Pestañas/CarritoCompras';
+import CarritoProvider  from './Contexto/CarritoContexto';
 
 
 function App() {
   return (
     <div className='Container'>
-  <BrowserRouter>
-      <ToastContainer /> 
-      <NavBar/>
-        <Routes>
-          <Route path='/' element= { <Inicio/ >} />
-          <Route path='/indumentaria' element= { <Indumentaria /> }/>
-          <Route path='/performance' element= { <Performance /> }/>
-          <Route path='/producto/:id' element= { <Detalle /> }/>
-          <Route path='/accesorios/:categoria' element= { <ListaProductos />} />
-          <Route path='*' element= { <NoEncontrado /> }/>
-
-        </Routes>
-  
-  </BrowserRouter>
+  <CarritoProvider>
+    <BrowserRouter>
+        <ToastContainer /> 
+        <NavBar/>
+          <Routes>
+            <Route path='/' element= { <Inicio/ >} />
+            <Route path='/indumentaria' element= { <Indumentaria /> }/>
+            <Route path='/performance' element= { <Performance /> }/>
+            <Route path='/producto/:id' element= { <Detalle /> }/>
+            <Route path='/accesorios/:categoria' element= { <ListaProductos />} />
+            <Route path='*' element= { <NoEncontrado /> }/>
+            <Route path='/carrito' element={ <CarritoCompras /> } />
+          </Routes>  
+    </BrowserRouter>
+  </CarritoProvider>
     </div>
   );
 }

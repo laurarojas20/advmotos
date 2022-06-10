@@ -113,6 +113,15 @@ body{
   justify-content: center;
 }
 
+.productosCarrito{
+  display: flex;
+  padding: 2%;
+}
+
+.margin{
+  margin-left: 5%;
+}
+
 a:link, a:visited, a:active{
   text-decoration: none;
   color: #b2bec3;

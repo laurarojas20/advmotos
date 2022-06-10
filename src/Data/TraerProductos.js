@@ -1,8 +1,8 @@
-import MockProductos from "./MockProductos"
+import mockProductos from "./mockProductos"
 
 const TraerProductos = () => {
     return new Promise ( (resolve, reject) => {
-        resolve(MockProductos)
+        resolve(mockProductos)
     }) 
 }
 
