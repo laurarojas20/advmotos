@@ -1,16 +1,13 @@
 import { Card, Button } from "react-bootstrap";
 import  ItemCount  from "../ItemCount/ItemCount.js"
 import React from 'react';
-import { useContext } from "react";
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
-import { CarritoContexto } from "../../Contexto/CarritoContexto.js";
 
-const CardBoots = ({nombre, imagen, precio, id, contador, setMostrarBoton}) => {
-    const { agregarAlCarrito } = useContext(CarritoContexto)
+const CardBoots = ({nombre, imagen, precio, id, setMostrarBoton}) => {
 
     const agregarCarrito = (contador) =>{        
-        toast(`Agregaste ${nombre}`, {
+        toast(`Agregaste ${contador} ${nombre}`, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -37,14 +34,9 @@ return(
                 <ItemCount 
                     agregarCarrito={ agregarCarrito } 
                     cantidad={10}
-                    agregarAlCarrito= { agregarAlCarrito } 
+                    setMostrarBoton = { setMostrarBoton }
+                    agregarAlCarrito = { (imagen, nombre, precio) } 
                 />
-                <Button className="contenedorContador"
-                variant="primary" 
-                onClick={ () => {agregarCarrito (contador) ; agregarAlCarrito({imagen, nombre, precio}) } } 
-                disabled={contador === 0} > 
-                Agregar 
-            </Button>              
             </Card.Body>
         </Card>
        

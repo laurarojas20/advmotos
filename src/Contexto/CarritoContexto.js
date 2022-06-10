@@ -6,6 +6,7 @@ const CarritoProvider = ({ children }) => {
     const [carritoProductos, setCarritoProductos ] = useState([])
 
     const agregarAlCarrito = (producto) => {
+        console.log("se agregó producto: ", producto)
         setCarritoProductos(carritoProductos => [...carritoProductos, producto])
     }
 
