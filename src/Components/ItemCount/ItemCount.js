@@ -1,9 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Button } from "react-bootstrap"
-import { CarritoContexto } from "../../Contexto/CarritoContexto";
 
-const ItemCount = ({cantidad, agregarCarrito, setMostrarBoton}) => {
-    const { agregarAlCarrito } = useContext(CarritoContexto) 
+const ItemCount = ({cantidad, agregarCarrito, setMostrarBoton}) => { 
     const [contador, setContador] = useState (1)
 
     const sumaContador = () => {
@@ -22,7 +20,7 @@ return (
 
         <Button className="contenedorContador"
                 variant="primary" 
-                onClick={ () => {agregarCarrito (contador) ; agregarAlCarrito(); setMostrarBoton(true)  } } 
+                onClick={ () => {agregarCarrito (contador) ; setMostrarBoton(true)  } } 
                 disabled={contador === 0} > 
                 Agregar 
         </Button> 

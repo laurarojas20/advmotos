@@ -113,14 +113,29 @@ body{
   justify-content: center;
 }
 
-.productosCarrito{
+.imagenesCarrito{
   display: flex;
+  width: 30%;
   padding: 2%;
+  float: left;
 }
 
-.margin{
-  margin-left: 5%;
+.prodEnCar{
+  width: 70%;
+  padding: 3%;
+  float: right;
 }
+
+.botonPagar{
+  clear: both;
+  margin-top: 5%;
+}
+
+.contenedorProdCarrito{
+  height: 30vh;
+  margin-bottom: 2%;
+}
+
 
 a:link, a:visited, a:active{
   text-decoration: none;

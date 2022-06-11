@@ -2,14 +2,16 @@ import { Container, Button } from "react-bootstrap"
 import ItemCount from "../ItemCount/ItemCount"
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CarritoContexto } from "../../Contexto/CarritoContexto";
 
 
-const ItemDetail = ({descripcion}) => {
+const ItemDetail = ({producto}) => {
     const [mostrarBoton, setMostrarBoton ] = useState(false)
+    const { agregarAlCarrito } = useContext(CarritoContexto)
 
     const agregarCarrito = (contador) =>{        
-        toast(`Agregaste ${contador} ${descripcion.nombre}`, {
+        toast(`Agregaste ${contador} ${producto.nombre}`, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -18,18 +20,19 @@ const ItemDetail = ({descripcion}) => {
             draggable: true,
             progress: undefined,
             })
+        agregarAlCarrito(producto)
 }
 
     return (
     <Container>
         <div className="ContenedorDetalle">
             <div className="Imagenes">
-            <img src= {` ${descripcion.img} ` } alt = {` ${descripcion.nombre} ` } className="anchoTotal" />
+            <img src= {` ${producto.img} ` } alt = {` ${producto.nombre} ` } className="anchoTotal" />
             </div>
             <div className="Nombre">
-                <h3> {descripcion.nombre} </h3>
+                <h3> {producto.nombre} </h3>
                 <hr/> 
-                <h4> ${descripcion.precio} </h4>
+                <h4> ${producto.precio} </h4>
             
         {mostrarBoton === false ? 
             <div>
@@ -37,7 +40,6 @@ const ItemDetail = ({descripcion}) => {
             agregarCarrito={ agregarCarrito } 
             cantidad={10}
             setMostrarBoton={ setMostrarBoton }
-            agregarAlCarrito = { (descripcion.imagen ,descripcion.nombre, descripcion.precio) }
             />
             </div>
         :
@@ -47,7 +49,7 @@ const ItemDetail = ({descripcion}) => {
             <hr /> 
                 <h3> Descripción </h3>
         <p>
-            {descripcion.descripcion}
+            {producto.descripcion}
         </p>    
         <div>
         

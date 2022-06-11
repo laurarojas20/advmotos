@@ -89,7 +89,7 @@ const mockProductos = [
         id: 10,
         nombre: "Baul Top Case Sw-Motech",
         descripcion: "Incluye soporte. Altura x Ancho x Profundidad: 34 cm x 41 cm x 33 cm.", 
-        precio: 163.640,
+        precio: 163.645,
         img: "/img/baul1.jpg",
         cantidad: 10,
         categoria: "portaequipaje"
