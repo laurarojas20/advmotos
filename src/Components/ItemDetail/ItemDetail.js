@@ -9,18 +9,19 @@ import { CarritoContexto } from "../../Contexto/CarritoContexto";
 const ItemDetail = ({producto}) => {
     const [mostrarBoton, setMostrarBoton ] = useState(false)
     const { agregarAlCarrito } = useContext(CarritoContexto)
+    
 
     const agregarCarrito = (contador) =>{        
         toast(`Agregaste ${contador} ${producto.nombre}`, {
             position: "top-center",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
             })
-        agregarAlCarrito(producto)
+        agregarAlCarrito({...producto, contador})
 }
 
     return (

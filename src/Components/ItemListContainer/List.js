@@ -1,4 +1,4 @@
-const mockProductos = [
+const List = [
     {
         id: 1,
         nombre: "Parabrisa MTC Grand Route",
@@ -50,7 +50,7 @@ const mockProductos = [
         id: 6,
         nombre: "Cubrepuños Cycra Voyager",
         descripcion: "Diámetro del manubrio: 22''. Material: Plástico y aluminio.", 
-        precio: 48.361,
+        precio: 48.360,
         img: "/img/cubrepuños3.jpg",
         cantidad: 10,
         categoria: "cubrepunos"
@@ -89,7 +89,7 @@ const mockProductos = [
         id: 10,
         nombre: "Baul Top Case Sw-Motech",
         descripcion: "Incluye soporte. Altura x Ancho x Profundidad: 34 cm x 41 cm x 33 cm.", 
-        precio: 163.645,
+        precio: 163.640,
         img: "/img/baul1.jpg",
         cantidad: 10,
         categoria: "portaequipaje"
@@ -127,4 +127,4 @@ const mockProductos = [
 
 ]
 
-export default mockProductos
+export default List

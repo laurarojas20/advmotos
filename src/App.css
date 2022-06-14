@@ -136,6 +136,18 @@ body{
   margin-bottom: 2%;
 }
 
+.tablaCarrito{
+  width: 50%;
+  float: left;
+  margin-right: 1%;
+}
+
+.container-centrar-carrito{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 a:link, a:visited, a:active{
   text-decoration: none;

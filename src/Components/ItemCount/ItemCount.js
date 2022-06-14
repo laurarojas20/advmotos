@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap"
 
-const ItemCount = ({cantidad, agregarCarrito, setMostrarBoton}) => { 
+const ItemCount = ({cantidad, precio, agregarCarrito, setMostrarBoton}) => { 
     const [contador, setContador] = useState (1)
 
     const sumaContador = () => {
