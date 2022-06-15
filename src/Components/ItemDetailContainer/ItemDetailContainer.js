@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
         TraerProductos()
         .then ( (res) => { 
             setProducto ( id 
-                ? res.find (item => item.id === parseInt(id)) 
+                ? res.find (item => item.id === id) 
                 : navigate('/NoEncontrado'))
         })
 

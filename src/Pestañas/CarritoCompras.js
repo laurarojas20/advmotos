@@ -37,7 +37,7 @@ const CarritoCompras = () => {
             <td colSpan={6}> Aún no tienes productos agregados tu carrito </td>
             </tr>
             <tr> <td colSpan={6}> 
-            Puedes encontrar el accesorio que buscas aquí 
+            Puedes encontrar el accesorio que buscas aquí -  
             <Link to="/accesorios/portaequipaje" > Portaequipajes y baules </Link>
             </td> </tr>
             <tr> <td colSpan={6}> <img src="./img/esperandoAndo.jpg" alt="Esperando ando" className="container-centrar-carrito" /> </td>  </tr>
