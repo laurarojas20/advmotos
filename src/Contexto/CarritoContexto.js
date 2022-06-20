@@ -8,8 +8,7 @@ const CarritoProvider = ({ children }) => {
 
     const agregarAlCarrito = (producto) => {
         let productoAgregado = carritoProductos.find(itemAgregado => itemAgregado.id  === producto.id)
-        let yaEstaElProdu = carritoProductos.includes(productoAgregado)
-        { !yaEstaElProdu ? 
+        { !productoAgregado ? 
                 setCarritoProductos(carritoProductos => [...carritoProductos, producto])
             : 
             toast(`PEROO ${producto.nombre} ya está en el carrito`, {
@@ -24,16 +23,18 @@ const CarritoProvider = ({ children }) => {
         }
     }
 
-    const eliminarProducto = (id) => {
-       const borrarProducto = carritoProductos.find(item => item.id !== id); 
-       let indexOfProducto = carritoProductos.indexOf(borrarProducto)
-       carritoProductos.splice((indexOfProducto), 1)
-        setCarritoProductos(carritoProductos => [...carritoProductos])
+    const contadorCarrito = () => {
+        
+    }
+
+    const eliminarProducto = (producto) => {
+       setCarritoProductos(carritoProductos.filter(item => item.id !== producto.id))
     }
 
     const vaciarCarrito = () => { 
         setCarritoProductos([]) 
     }
+
 
     const precioTotal = () => {
         return carritoProductos.reduce((acu, producto) => (acu + (producto.contador * producto.precio) ), 0)

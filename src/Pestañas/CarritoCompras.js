@@ -34,7 +34,7 @@ const CarritoCompras = () => {
           {carritoProductos.length === 0 && (
             <> 
             <tr>
-            <td colSpan={6}> Aún no tienes productos agregados tu carrito </td>
+            <td colSpan={6}> Aún no tienes productos agregados a tu carrito </td>
             </tr>
             <tr> <td colSpan={6}> 
             Puedes encontrar el accesorio que buscas aquí -  
@@ -55,7 +55,7 @@ const CarritoCompras = () => {
                 <td> $ { item.precio * item.contador } </td>
                 <td> 
                   <Button 
-                  onClick= { () => { eliminarProducto() } }
+                  onClick= { () => { eliminarProducto(item) } }
                   variant="dark"> 
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -65,11 +65,15 @@ const CarritoCompras = () => {
                 </td>
               </tr>
           )} )} 
+        {carritoProductos.length > 0 && (
+          <> 
           <tr>
             <td>  </td>
             <td colSpan={3}>Monto total de tu compra </td>
             <td colSpan={2}>$ { precioTotal() } </td>
           </tr>
+          </>
+        ) }
         </tbody>
         </Table>
   
