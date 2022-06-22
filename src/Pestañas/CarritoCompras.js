@@ -4,6 +4,7 @@ import { CarritoContexto } from "../Contexto/CarritoContexto";
 import Slide from "../Components/Carousel/Slide"
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom"
+import ModalPagar from "../Components/ModalPagar/ModalPagar";
 
 const CarritoCompras = () => {
   const { carritoProductos, eliminarProducto, vaciarCarrito, precioTotal } = useContext(CarritoContexto)
@@ -84,11 +85,12 @@ const CarritoCompras = () => {
             style={{marginLeft: '5%'}}> 
             Borrar todo 
         </Button>
-        <Button 
+        <ModalPagar
             variant="dark" 
-            style={{marginLeft: '5%'}}> 
+            style={{marginLeft: '5%'}}
+        >
             Pagar 
-        </Button> 
+        </ModalPagar>
         </div>
       </div>
     </div>
