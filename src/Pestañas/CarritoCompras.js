@@ -1,3 +1,4 @@
+import './EstilosPestañas/EstilosPestañas.css'
 import { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { CarritoContexto } from "../Contexto/CarritoContexto";
@@ -70,20 +71,21 @@ const CarritoCompras = () => {
           <> 
           <tr>
             <td>  </td>
-            <td colSpan={3}>Monto total de tu compra </td>
+            <td colSpan={3}>Monto total de tu compra </td> 
             <td colSpan={2}>$ { precioTotal() } </td>
           </tr>
           </>
         ) }
         </tbody>
         </Table>
-  
-        <div className="botonPagar">
+
+      { carritoProductos.length > 0 && (
+      <div className="botonPagar">
         <Button
-            onClick= { () => { vaciarCarrito() } } 
-            variant="danger" 
-            style={{marginLeft: '5%'}}> 
-            Borrar todo 
+        onClick= { () => { vaciarCarrito() } } 
+        variant="danger" 
+        style={{marginLeft: '5%'}}> 
+        Borrar todo 
         </Button>
         <ModalPagar
             variant="dark" 
@@ -91,7 +93,8 @@ const CarritoCompras = () => {
         >
             Pagar 
         </ModalPagar>
-        </div>
+      </div>
+      ) }
       </div>
     </div>
   </> 

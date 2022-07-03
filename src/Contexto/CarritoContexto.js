@@ -5,7 +5,6 @@ const CarritoContexto = createContext ()
 
 const CarritoProvider = ({ children }) => {
     const [carritoProductos, setCarritoProductos ] = useState([])
-    const [contadorCantidad, setContadorCantidad ] = useState(0)
 
     const agregarAlCarrito = (producto) => {
         let productoAgregado = carritoProductos.find(itemAgregado => itemAgregado.id  === producto.id)
@@ -22,13 +21,6 @@ const CarritoProvider = ({ children }) => {
                 progress: undefined,
                 })
         }
-        contadorCarrito(contadorCantidad)
-    }
-
-    const contadorCarrito = () => {
-        let numero = carritoProductos.reduce((acu, ele) => acu += ele.contador, 0);
-        setContadorCantidad(numero)
-        console.log(contadorCarrito)
     }
 
     const eliminarProducto = (producto) => {
@@ -49,8 +41,7 @@ const CarritoProvider = ({ children }) => {
         agregarAlCarrito, 
         eliminarProducto, 
         vaciarCarrito, 
-        precioTotal,
-        contadorCarrito
+        precioTotal
     }
 
     return(

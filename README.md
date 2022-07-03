@@ -21,7 +21,11 @@ De bootstrap icons se toma la figura del carrito.
 
 ### `npm install --save react-toastify`
 
-Utilicé la librería de react-toastify para darle dinamismo al evento de agregar un producto al carrito de compras, de esta manera sabemos el momento exacto en el que agregamos determinada cantidad de items al carrito. 
+Utilicé la librería de react-toastify para darle dinamismo al evento de agregar un producto al carrito de compras, de esta manera sabemos el momento exacto en el que agregamos determinada cantidad de items al carrito.
+
+### `npm install sweetalert2`
+
+Utilicé también la librería sweetalert2 para mostrar la confirmación de la compra y que el usuario pueda ver bien cuál es su número de orden. 
 
 ### `npm install react-router-dom@6`
 

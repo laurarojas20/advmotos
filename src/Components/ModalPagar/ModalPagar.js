@@ -1,9 +1,9 @@
 import { Button, Modal, Form } from "react-bootstrap";
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CarritoContexto } from "../../Contexto/CarritoContexto";
 import { addDoc, collection } from "firebase/firestore"
 import database from "../../Data/firebaseConfig";
-import { useNavigate } from "react-router-dom";
 
 const ModalPagar = () => {
   const { carritoProductos, precioTotal, vaciarCarrito } = useContext(CarritoContexto)
@@ -45,21 +45,24 @@ const ModalPagar = () => {
     const ordenFirebase = collection(database, 'ordenes')
     const ordenDoc = await addDoc(ordenFirebase, nuevaOrden)
     setOrdenExitosa(ordenDoc.id)
-    console.log("Orden generada ", ordenDoc)
+    vaciarCarrito()
   }  
   
   const navigate = useNavigate()
 
   const finalizarOrden = () => {
     navigate('/')
-    vaciarCarrito()
   }
+
+  const Swal = require('sweetalert2')
 
   return (
     <>
+    
       <Button variant="dark" onClick={handleShow} style={{marginLeft: '5%'}}>
               Pagar
-      </Button>
+      </Button> 
+    
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title> {ordenExitosa ? 'Compra exitosa' : 'Generación de orden de compra' } </Modal.Title>
@@ -67,13 +70,22 @@ const ModalPagar = () => {
         <Modal.Body>
 
       {ordenExitosa ? (
-        <div> 
-          Orden generada con éxito 
-          <br /> 
-          Número de orden: {ordenExitosa}
-          <br /> 
-        <Button variant="dark" onClick={finalizarOrden}> Aceptar </Button>
-        </div> 
+        Swal.fire({
+          title: '<strong> Orden generada con éxito  </strong>',
+          icon: 'success',
+          html:
+            `Número de orden: ${ordenExitosa}` 
+            ,
+          showCloseButton: true,
+          showCancelButton: false,
+          focusConfirm: false,
+          confirmButtonText:
+          `Aceptar`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            finalizarOrden()
+          }
+        })
       ) : (
       <Form onSubmit={handleSubmit}>
         

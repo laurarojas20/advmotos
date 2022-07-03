@@ -1,0 +1,27 @@
+.footer{
+    padding: 2%;
+    background-color: #2d3436;
+    color: #dfe6e9;
+    width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	
+}
+
+.contacto{
+	width: 50%;
+	float: left;
+}
+
+.redes {
+    padding: 2%;
+    width: 45%;
+    float: right;
+
+  }
+  .redes li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 5%;
+    float: right;
+  }

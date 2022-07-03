@@ -30,7 +30,7 @@ const ListaProductos = () => {
         <>
         { loading ? <Loader /> 
         :
-        <div className="contenedor">           
+        <div className="container">           
             <ItemListContainer titulo={categoria} productos={productos} /> 
         </div>
         }

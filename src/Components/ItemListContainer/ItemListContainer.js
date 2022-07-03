@@ -1,28 +1,27 @@
 import CardBoots from "../Cards/Cards";
-import { Card, CardGroup } from "react-bootstrap";
-
+import { Card } from "react-bootstrap";
+import './EstilosItemListContainer.css'
 
 const ItemListContainer = ({titulo, productos}) => { 
      
     return (
         <>
-        <div>
+            <div className="titulo">
             <h3> Accesorios - {titulo} </h3>
-            <br /> 
-                <CardGroup className='row row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>
+            </div> 
+                <div className= 'row row-cols-sm-1 row-cols-md-3 row-cols-lg-4 contenedorCards'>
             {
                 productos.map( ({nombre, img,  precio, id}) => {
                     return(
                     
-                        <Card className="col ContenedorProductos" key= {id}>
+                        <Card className='row producto' key= {id}>
                         <CardBoots nombre= {nombre} imagen={img} precio={precio} id= {id} /> 
                         </Card>
                        
                     )
                 })
             }
-                 </CardGroup>
-        </div>
+                 </div>       
         </>
     )
 }

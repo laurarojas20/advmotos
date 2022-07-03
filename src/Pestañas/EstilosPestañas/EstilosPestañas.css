@@ -1,0 +1,61 @@
+.contenedor{
+  padding: 2%;
+  height: 100vh;
+}
+
+.contenedorDetalle{
+  padding: 4%;
+}
+
+.tablaCarrito{
+    width: 50%;
+    float: left;
+    margin-right: 1%;
+  }
+
+.botonPagar{
+    clear: both;
+    margin-top: 5%;
+  }
+
+  .Imagenes{
+    width: 50%;
+    float: left;
+    margin-right: 1%;
+  }
+
+  .Nombre{
+    width: 45%;
+    float: right;
+    padding: 1%;
+  }
+
+  .ContenedorProductos{
+    padding: 2%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    .Imagenes{
+      width: 100%;
+      margin-right: 1%;
+    }
+    .Nombre{
+      width: 100%;
+      padding: 1%;
+    }
+  
+  
+  }
+  
+  @media (max-width: 480px){
+    .Imagenes{
+      width: 100%;
+      margin-right: 1%;
+    }
+    .Nombre{
+      width: 100%;
+      padding: 1%;
+    }
+  }

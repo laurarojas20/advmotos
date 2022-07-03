@@ -2,7 +2,7 @@ import ItemDetailContainer from "../Components/ItemDetailContainer/ItemDetailCon
 
 const Detalle = () => {
     return(
-      <div className='contenedor'> 
+      <div className='contenedorDetalle'> 
           <ItemDetailContainer /> 
       </div> 
     )

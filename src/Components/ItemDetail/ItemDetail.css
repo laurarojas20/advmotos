@@ -1,0 +1,19 @@
+.ContenedorDetalle{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 3%;
+  }
+
+  .Imagenes{
+    width: 50%;
+    float: left;
+    margin-right: 1%;
+  }
+
+  .Nombre{
+    width: 45%;
+    float: right;
+    padding: 1%;
+  }

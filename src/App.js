@@ -12,24 +12,26 @@ import ListaProductos from './Pestañas/ListaProductos';
 import NoEncontrado from './Pestañas/NoEncontrado';
 import CarritoCompras from './Pestañas/CarritoCompras';
 import CarritoProvider  from './Contexto/CarritoContexto';
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
   return (
-    <div className='Container'>
+    <div>
   <CarritoProvider>
     <BrowserRouter>
         <ToastContainer /> 
         <NavBar/>
           <Routes>
             <Route path='/' element= { <Inicio/ >} />
-            <Route path='/indumentaria' element= { <Indumentaria /> }/>
-            <Route path='/performance' element= { <Performance /> }/>
+            <Route path='/indumentaria/:categoria' element= { <Indumentaria /> }/>
+            <Route path='/performance/:categoria' element= { <Performance /> }/>
             <Route path='/producto/:id' element= { <Detalle /> }/>
             <Route path='/accesorios/:categoria' element= { <ListaProductos />} />
             <Route path='*' element= { <NoEncontrado /> }/>
             <Route path='/carrito' element={ <CarritoCompras /> } />
-          </Routes>  
+          </Routes>
+        <Footer />    
     </BrowserRouter>
   </CarritoProvider>
     </div>

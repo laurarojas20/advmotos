@@ -2,6 +2,7 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 import TraerProductos from "../../Data/TraerProductos"
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import { Container } from "react-bootstrap"
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
@@ -19,9 +20,9 @@ const ItemDetailContainer = () => {
     }, [id])
 
     return (
-        <div>
+        <Container fluid>
             <ItemDetail producto={producto}/>
-        </div>
+        </Container>
     )
 }
 
