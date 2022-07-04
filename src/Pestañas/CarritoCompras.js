@@ -9,7 +9,7 @@ import ModalPagar from "../Components/ModalPagar/ModalPagar";
 
 const CarritoCompras = () => {
   const { carritoProductos, eliminarProducto, vaciarCarrito, precioTotal } = useContext(CarritoContexto)
-
+  
   return(
   <>
     <div className="contenedor">

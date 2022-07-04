@@ -17,10 +17,18 @@ const ModalPagar = () => {
           telefono: '', 
           email: '' 
   })
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (event) => {
+    event.preventDefault()
     setOrden({...orden, comprador: valorFormulario})
     guardarData({...orden, comprador: valorFormulario})
+
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
   }
   const handleChange = (e) => {
     setValorFormulario({...valorFormulario, [e.target.name]: e.target.value})
@@ -56,6 +64,10 @@ const ModalPagar = () => {
 
   const Swal = require('sweetalert2')
 
+  const [validated, setValidated] = useState(false);
+
+  
+
   return (
     <>
     
@@ -87,11 +99,12 @@ const ModalPagar = () => {
           }
         })
       ) : (
-      <Form onSubmit={handleSubmit}>
+      <Form validated={validated} onSubmit={handleSubmit}>
         
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3" controlId="validacionNombre">
               <Form.Label>Nombre y Apellido</Form.Label>
-              <Form.Control 
+              <Form.Control
+                required 
                 type="text" 
                 placeholder="Introduce tu Nombre y Apellido" 
                 name="nombre"
@@ -100,9 +113,10 @@ const ModalPagar = () => {
               />
           </Form.Group>
   
-          <Form.Group className="mb-3" >
+          <Form.Group className="mb-3" controlId="validacionTelefono">
               <Form.Label> Teléfono </Form.Label>
-              <Form.Control 
+              <Form.Control
+                required  
                 type="text" 
                 placeholder="Introduce tu número de teléfono"  
                 name="telefono"
@@ -111,9 +125,10 @@ const ModalPagar = () => {
               />
           </Form.Group>
   
-          <Form.Group className="mb-3" >
+          <Form.Group className="mb-3" controlId="validacionCorreo">
               <Form.Label>Correo electrónico</Form.Label>
               <Form.Control 
+                required 
                 type="email" 
                 placeholder="Introduce tu email" 
                 name="email"
