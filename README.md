@@ -31,4 +31,4 @@ Utilicé también la librería sweetalert2 para mostrar la confirmación de la c
 
 Se implementó esta librería para facilitar el enrutamiento basado en componentes.
 
-![ADVMotos-GIF-](https://user-images.githubusercontent.com/85701622/177380261-f6601566-702b-4a4b-9b58-44a2b0708593.gif)
+
