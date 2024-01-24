@@ -5,6 +5,9 @@ Este es un eCommerce de accesorios para motos tipo Adventure. Es un proyecto rea
 Autora: Laura Rojas. 
 Email: laurarojasss@hotmail.com
 
+![ADVMotos-GIF-](https://user-images.githubusercontent.com/85701622/177380261-f6601566-702b-4a4b-9b58-44a2b0708593.gif)
+
+
 ## Dependencias necesarias: 
 
 Para la realización de esta App utilicé el framework de Bootstrap, por esto se deben instalar las siguientes dependencias: 
